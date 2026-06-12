@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COVID Cases Across U.S. Colleges</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Narrative Visualization</p>
+      <h1>COVID Cases Across U.S. Colleges</h1>
+      <p class="intro">
+        Reported COVID cases were not spread evenly across U.S. colleges. A few states and schools accounted for a much larger share of the total.
+      </p>
+    </header>
+
+    <section class="nav-row" aria-label="Slideshow navigation">
+      <button id="backBtn" class="nav-btn">Back</button>
+      <div class="scene-status">
+        <strong id="sceneCount">Scene 1 of 3</strong>
+        <div class="dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <button id="nextBtn" class="nav-btn">Next</button>
+    </section>
+
+    <section id="sceneText" class="scene-text"></section>
+
+    <section id="controls" class="controls" aria-label="Scene controls"></section>
+
+    <section class="chart-card">
+      <div class="chart-header">
+        <h2 id="chartTitle"></h2>
+        <p id="chartSubtitle"></p>
+      </div>
+      <div id="chart"></div>
+    </section>
+
+    <p class="note">
+      Source: The New York Times COVID-19 college dataset. Missing 2021 case counts are shown as 0 for the 2021 view.
+    </p>
+  </main>
+
+  <div id="tooltip" class="tooltip" role="tooltip"></div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

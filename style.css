@@ -1,0 +1,292 @@
+:root {
+  --bg: #f5efe4;
+  --card: #fffaf0;
+  --ink: #2f2f2f;
+  --muted: #686058;
+  --line: #ded2bf;
+  --bar: #5f7f99;
+  --highlight: #c96114;
+  --accent: #244c66;
+  --soft: #efe4cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  width: min(1160px, calc(100vw - 48px));
+  margin: 34px auto 48px;
+}
+
+.hero h1 {
+  margin: 6px 0 16px;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: 0.2px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--highlight);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+.intro {
+  max-width: 980px;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.nav-btn,
+.control-btn,
+select {
+  border: 1px solid #b9ac9a;
+  background: #fff9ee;
+  color: #1e1e1e;
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+.nav-btn,
+.control-btn {
+  cursor: pointer;
+}
+
+.nav-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.nav-btn:hover:not(:disabled),
+.control-btn:hover,
+select:hover {
+  border-color: var(--accent);
+}
+
+.scene-status {
+  min-width: 140px;
+}
+
+.scene-status strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #cbbda9;
+}
+
+.dot.active {
+  background: var(--highlight);
+}
+
+.scene-text {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-left: 6px solid var(--accent);
+  background: rgba(255, 250, 240, 0.58);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.scene-text strong {
+  font-size: 19px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  align-items: center;
+  min-height: 58px;
+  margin-top: 14px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 250, 240, 0.62);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.control-label {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.control-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.chart-card {
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.chart-header {
+  padding: 22px 26px 8px;
+  border-bottom: 1px solid rgba(222, 210, 191, 0.7);
+}
+
+.chart-header h2 {
+  margin: 0 0 6px;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.chart-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+#chart {
+  width: 100%;
+  overflow-x: auto;
+}
+
+svg {
+  display: block;
+  min-width: 1080px;
+}
+
+.axis text {
+  fill: #383838;
+  font-size: 13px;
+}
+
+.axis path,
+.axis line {
+  stroke: #555;
+}
+
+.grid line {
+  stroke: #e5dac7;
+}
+
+.grid path {
+  display: none;
+}
+
+.bar {
+  cursor: default;
+}
+
+.bar:hover {
+  opacity: 0.85;
+}
+
+.value-label {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #222;
+}
+
+.annotation-box {
+  fill: #fff3a6;
+  stroke: #a59345;
+  stroke-width: 1.3px;
+}
+
+.annotation-text {
+  fill: #1f1f1f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.annotation-line {
+  stroke: #a59345;
+  stroke-width: 1.6px;
+}
+
+.annotation-dot {
+  fill: #a59345;
+}
+
+.axis-label {
+  fill: #4b4b4b;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.empty-message {
+  font-size: 18px;
+  fill: #555;
+}
+
+.tooltip {
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(31, 31, 31, 0.92);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 280px;
+  z-index: 10;
+}
+
+.note {
+  margin: 14px 2px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    width: min(100vw - 24px, 1160px);
+    margin-top: 20px;
+  }
+
+  .intro,
+  .scene-text {
+    font-size: 16px;
+  }
+
+  .controls {
+    align-items: stretch;
+  }
+
+  .control-group {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
